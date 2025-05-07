@@ -8,7 +8,7 @@ namespace SharpStudents
 {
     internal class Student
     {
-        public string Name { get; set; } //posso decidere se togliere il set
+        public string Name { get; set; }
         public string Surname { get; set; }
         public string Gender { get; set; }
 
@@ -47,6 +47,17 @@ namespace SharpStudents
         public double Mean()
         {
             return (double)this._marks.Sum() / this._marks.Count; //basta che uno sia castato
+        }
+
+        public override string ToString()
+        {
+            string MarksString = "";
+            for (int i = 0; i < this._marks.Count; i++)
+            {
+                MarksString = MarksString + this._marks[i] + ",";
+            }
+            MarksString = MarksString.TrimEnd(','); //remove last comma
+            return $"STUDENT\nFull Name: {this.Name} {this.Surname}\nGender: {this.Gender}\nYear of Birth: {this.Yob}\nMarks: {MarksString}";
         }
     }
 }
