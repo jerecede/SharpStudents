@@ -49,6 +49,9 @@ namespace SharpStudents
             return (double)this._marks.Sum() / this._marks.Count; //basta che uno sia castato
         }
 
+        //il papa deve dare permesso se figli possono fare override su una funzione padre,
+        //e se si fa bisogna scrivere override.
+        //in js era piu semplice e automatico
         public override string ToString()
         {
             string MarksString = "";
